@@ -1,7 +1,15 @@
-var obj = {
-  key: value
+
+
+function createAndLinkObject(o){
+  function F(){}
+  F.prototype = o;
+  return new F();
 }
 
-var myObj = new Object();
+var anotherObject ={
+  a:2
+}
 
-console.log(myObj);
+var myObj = createAndLinkObject(anotherObject);
+
+myObj.a
