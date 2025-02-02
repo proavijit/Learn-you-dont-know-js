@@ -223,3 +223,17 @@ $(document).ready(function(){
 
 btn1.build($body)
 btn2.build($body)
+
+
+
+function doSomethingCool(){
+  var helper = (typeof FeatureXYZ !== "undefined") ? FeatureXYZ: function(){
+    helper()
+  }
+}
+
+function doSomethingCool(FeatureXYZ){
+  var helper = FeatureXYZ  || function(){
+    helper()
+  }
+}
