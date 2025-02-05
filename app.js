@@ -1,59 +1,63 @@
+// var myBirthday = new Date(1998, 10, 25); // ২৫ নভেম্বর, ১৯৯৮
+// console.log(myBirthday);
 
 
 
-// var a = [];
-// a[0] = 1;
-// a[2] = [3];
 
-// console.log(a.length);
+// var timestamp1 = new Date().getTime();
+// console.log(timestamp1); // বর্তমান timestamp দেখাবে
 
-// var a = [];
-// a[0] = 1;
-// a["footer"] = 2;
+// var timestamp2 = Date.now(); 
+// console.log(timestamp2); // এটি একই কাজ করবে
 
-// console.log(a["footer"]);
 
-// console.log(a.footer);
-
-// var a = [];
-
-// a["13"] = 42;
-
-// console.log(a.length);
-
-// function foo(){
-//   console.log(arguments);
+// if(!Date.now){
+//   Date.now = function(){
+//     return new Date().getTime();
+//   }
 // }
 
-// foo("bar", "baz")
+// console.log(Date());
 
-// function foo(){
-//   var arr = Array.prototype.slice.call(arguments);
-//   arr.push("bum");
-//   console.log(arr);
+
+
+// var error = new Error("Something went wrong");
+
+// console.log(error.message);
+
+
+
+// function checkAge(age){
+//   if(age < 18){
+//     throw new Error("You are not an adult");
+//   }
+//   return "You are an adult";
 // }
 
-// foo("bar", "baz")
-
-
-// function foo(){
-//   var arr = Array.from(arguments);
-//   console.log(arr)
+// try{
+//   console.log(checkAge(15));
+// }catch(error){
+//   console.log(error.message);
 // }
 
-// foo("Bar", "bar ")
 
-// var a = "foo";
-// a[1] = "O";
-// console.log(a); // "foo" (পরিবর্তন হয়নি)
+// var sym1 = Symbol("apple");
+// var sym2 = Symbol("apple");
+
+// console.log(sym1 === sym2);
+
+// console.log('------------------');
+
+// var obj = {
+//   name: "Avijit"
+// };
 
 
-// var b = ['f', 'o', 'o'];
+// let text = "Developer";
+// console.log(text.slice(-3, 4));  // Output: ""
+// console.log(text.slice(3, -3));  // Output: "vel"
 
-// b[1] = 'o';
 
-// console.log(b);
-let a = "avijit"
-var c = a.concat("bar"); 
+let text = "Programming";
 
-console.log(Array.prototype.join(a,"--"));
+console.log(text.substring(6,8)); 
