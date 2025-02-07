@@ -13,9 +13,9 @@
 // var b = 1 / a;
 // console.log(b);
 
-// var a = 42.59;
-// console.log(a.toPrecision()); // "42.59"
-// a.toPrecision(3); // "42.6"
+var a = 42.59;
+// console.log(a.toPrecision(2)); // "42.59"
+a.toPrecision(3); // "42.6"
 
 
 // console.log(Math.abs(10 - 20))
