@@ -1,6 +1,24 @@
+// var i = 2;
+// Number.prototype.valueOf = function() {
+//   return i++;
+// };
+
+// var a = new Number(42);
+// if (a == 2 && a == 3) {
+//   console.log("Yep, this happened.");
+// }
 
 
-var a = 'a';
-var b = "foo";
+// console.log([] == ![]); // true
 
-console.log(a && b); // "42"
+
+class DVD {
+  constructor(name, releaseYear, director){
+    this.name = name;
+    this.releaseYear = releaseYear;
+    this.director = director;
+  }
+
+  
+}
+
