@@ -281,3 +281,18 @@ const p1 = new Promise((resolve, reject) => setTimeout(reject, 500, "Error1"));
 const p2 = new Promise((resolve) => setTimeout(resove), 100, " Success")
 
 first([p1, p2].then(console.log))
+
+
+function fetchData(){
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve("Data Loded")
+    }, 1000);
+  })
+}
+
+
+fetchData().then(data => console.log(data);)
+
+console.log("This runs before data loads");
+
