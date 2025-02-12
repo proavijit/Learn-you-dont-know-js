@@ -137,3 +137,19 @@ const gen = fetchData()
 const promise = gen.next().value;
 
 promise.then((result) => gen.next(result));
+
+
+
+function *foo(){
+  var results = yield Promise.all([
+    request("http://some.url.1")
+    request("http://some.url.1")
+  ])
+
+  var [r1, r2] = results;
+
+  var r3 = yield request("http://some.url.3/?v=" + r1 + "," + r2)
+ console.log(r3);
+}
+
+foo(foo)
