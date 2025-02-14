@@ -31,3 +31,86 @@ var main = ASQ({
 .val(function(msg){
   console.log(msg);
 })
+
+
+ASQ.react(function setup(next){
+  document.getElementById("mybtn")
+  .addEventListener("click", next, false)
+})
+.seq(function(evt){
+  var = btnID = evt.target.id;
+  return request("http://some.url.1/?id=" + btnID)
+})
+.val(function(text){
+  console.log(text);
+})
+
+var sq = ASQ.react(function setup(next, registerTeardown){
+  var btn = document.getElementById("mybtn");
+  btn.addEventListener("click", next, false)
+
+  registerTeardown(function(){
+    btn.removeEvenetListener("click", next , false)
+  })
+})
+.seq()
+.then()
+.val()
+.sq.stop()
+
+
+var prevState ;
+
+ASQ(
+  2
+)
+.runner(
+  state(1, function* stateOne(transation){
+    console.log("in state 1");
+    prevState = 1;
+    yield transation(3)
+  })
+)
+
+state(2, function* stateTwo(transition){
+  console.log("in state 2");
+  prevState = 2; 
+  yield transition(3)
+})
+
+
+state(3, function* stateThree(transation){
+  console.log("in state 3");
+  if(prevState === 2){
+    pevState = 3;
+    yield  transation(1)
+  }else{
+    yield "That is all falks";
+    prevState = 3;
+    yield transation(false);
+  }
+})
+
+.val(function(msg){
+  console.log(msg);
+})
+
+const csp = require('js-csp');
+
+function* sender(channel){
+  yield csp.put(channel, "Hello kamon aso");
+  yield csp.timeout(1000);
+
+  yield csp.put(channel, "Ok tell me a joak");
+  yield csp.settimeout(1000);
+
+  yield csp.put(channel, "Dog sleeping in road")
+}
+
+
+function* recever(channel){
+  while(true){
+    let message = yield csp.take(channel);
+    console.log("Message Recived,", message );
+  }
+}
