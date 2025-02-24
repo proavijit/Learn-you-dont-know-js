@@ -31,16 +31,16 @@
 // var viewFloat = new FloatArray(buf, 4, 1);
 
 
-// view16[0] = 5000;
-// view8[0] = 255;
-// view8[1] = 100;
+view16[0] = 5000;
+view8[0] = 255;
+view8[1] = 100;
 
-// viewFloat[0] = 12.34;
+viewFloat[0] = 12.34;
 
-// console.log(view16[0]);
-// console.log(view8[0]);
-// console.log(view8[1]);
-// console.log(viewFloat[0]);
+console.log(view16[0]);
+console.log(view8[0]);
+console.log(view8[1]);
+console.log(viewFloat[0]);
 
 
 
@@ -110,8 +110,7 @@
 
 // console.log(view8[0]);
 // console.log(view8[1]);
-// console.log(view8[0].toString(16))
-// console.log(view8[1].toString(16))
+
 
 
 // var tmp = view8[0];
@@ -187,16 +186,16 @@
 // console.log(map.has('age'))
 
 
-let obj = {name: 'Avijit'};
-let weakmap = new weakmap();
-weakmap.set(obj, 'Developer');
+// let obj = {name: 'Avijit'};
+// let weakmap = new weakmap();
+// weakmap.set(obj, 'Developer');
 
-console.log(weakmap.get(obj))
-
-
+// console.log(weakmap.get(obj))
 
 
 
+
+console.log("hello");
 
 
 
