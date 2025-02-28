@@ -1,8 +1,7 @@
 
 
 
-    
-    const getWeather = () => {
+let getWeather = () => {
       
       let cityName = document.getElementById('inFild').value.toLowerCase().toString();
 
@@ -13,6 +12,7 @@
 	.then(data => {
 
     document.getElementById('errorID').innerText = data.message;
+   
 
     console.log(data.message);
 
@@ -27,12 +27,17 @@
       temp_max,
       temp_min
     
-    } = data.main
+    } = data.main;
 
+    let countryName = data.sys.country;
+ 
   let mainData = `
     <div class="container">
-        <h2>City Name: ${data.name}, Country Name: ${data.sys.country}</h2>
+        <h2>City Name: ${data.name}, Country Name: ${countryCodeFunc(countryName)}</h2>
+        <div> ${flagFunction(countryName)} </div>  
+        
         <ul>
+        <li>Description: ${data.weather[0].description}</li>
             <li>Feels Like: ${feels_like}</li>
             <li>Ground Level: ${grnd_level}</li>
             <li>Humidity: ${humidity}</li>
@@ -45,7 +50,6 @@
     </div>
 `;
 
-
     document.getElementById('DataShow').innerHTML = mainData;
     
     document.getElementById('inFild').value = '';
@@ -56,11 +60,24 @@
     console.log(err);
   });
 
-console.log(cityName);
-
-
-
-
-  console.log("Button");
 }
 
+
+let flagFunction = (name) => {
+  let flagUrl = `https://flagsapi.com/${name}/flat/64.png`;
+  let imagesFlag = ` <img id="flag" src="${flagUrl}" alt="Country Flag" />`
+  
+  return imagesFlag;
+}
+
+
+
+
+const countryCodeFunc = (countryName) => {
+const countryCode = `https://restcountries.com/v3.1/alpha/${countryName}`;
+fetch(countryCode)
+	.then(response => response.json())
+	.then(data => console.log(data))
+	.catch(err => console.error(err));
+
+}
