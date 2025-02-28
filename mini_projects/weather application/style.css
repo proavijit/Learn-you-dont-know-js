@@ -1,0 +1,45 @@
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #ddd;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+       
+        input{
+          margin: 0 15px;
+        }
+
+         #errorID{
+          color:red !important;
+          margin-left: 30px;
+        }
