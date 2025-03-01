@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+
+.container{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+input[type="number"] {
+	width: auto;
+  	height: 30px;
+  	padding: 3px;
+  	font-size: 1.8rem;
+  	border: 1px solid gray;
+    margin: 10px 0;
+}
+
+ .my-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* Example 2: Adding a hover effect to a button */
+  .my-button:hover {
+    background-color: #45a049;
+  }
