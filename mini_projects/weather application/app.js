@@ -33,19 +33,19 @@ let getWeather = () => {
  
   let mainData = `
     <div class="container">
-        <h2>City Name: ${data.name}, Country Name: ${countryCodeFunc(countryName)}</h2>
-        <div> ${flagFunction(countryName)} </div>  
+        <h2>City: ${data.name}, Country: ${countryName}</h2>
+        <div class="flag"> ${flagFunction(countryName)} </div>  
         
         <ul>
         <li>Description: ${data.weather[0].description}</li>
-            <li>Feels Like: ${feels_like}</li>
+        <li>Temperature: <strong> ${(temp - 273.15).toFixed(0)} °C </strong></li>
+            <li>RealFeele: ${(feels_like - 273.15).toFixed(2)} °C</li>
             <li>Ground Level: ${grnd_level}</li>
             <li>Humidity: ${humidity}</li>
             <li>Pressure: ${pressure}</li>
             <li>Sea Level: ${sea_level}</li>
-            <li>Temperature: ${temp}</li>
-            <li>Max Temperature: ${temp_max}</li>
-            <li>Min Temperature: ${temp_min}</li>
+            <li>Max Temperature: ${temp_max} Kelvin </li>
+            
         </ul>
     </div>
 `;
